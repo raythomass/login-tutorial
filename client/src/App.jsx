@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Toaster position='bottom-right' toastOptions={{duration: 2000}}/>
+      <Toaster position='top-right' toastOptions={{duration: 2000}}/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/registar' element={<Registar/>}/>

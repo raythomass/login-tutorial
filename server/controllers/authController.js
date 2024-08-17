@@ -12,17 +12,17 @@ const registarUser = async(req, res) => {
             return res.json({
                 error: "Name is required"
             })
-        };
+        }
         //Check if password is good
         if(!password || password.length < 6) {
             return res.json ({
                 error: "Password is required and should be at least 6 characters long"
             })
-        };
+        }
         // Check email
         const exist = await User.findOne({email});
         if(exist) {
-            return rws.json({
+            return res.json({
                 error: "Email is taken already"
             })
         };
