@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import axios from 'axios';
 import {toast} from 'react-hot-toast'
 import {useNavigate} from 'react-router-dom';
+import { UserContext } from '../../context/userContext';
 
 export default function Login() {
+  const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
   const [data, setData] = useState({
     email: "",
@@ -21,6 +23,7 @@ export default function Login() {
       if(data.error) {
         toast.error(data.error)
       } else {
+        setUser(data.user)
         setData({});
         navigate('/dashboard')
       }
