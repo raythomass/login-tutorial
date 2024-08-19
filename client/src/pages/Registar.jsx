@@ -22,7 +22,7 @@ export default function Registar() {
         toast.error(data.error)
       } else {
         setData({})
-        toast.success("Login succesfull, Welcome")
+        toast.success("User Created!")
         navigate('/login');
       }
     }
